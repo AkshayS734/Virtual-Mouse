@@ -4,7 +4,6 @@ import pyautogui
 import math
 
 
-# Initialize MediaPipe Hands
 mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.7, min_tracking_confidence=0.7)
 mp_drawing = mp.solutions.drawing_utils
@@ -52,9 +51,7 @@ while True:
             if (distance_click<0.1 and distance_scroll<0.1):
                 pyautogui.scroll(10)
             if (distance_click<0.1 and distance_scroll_down<0.1):
-                pyautogui.scroll(-10)
-            # if (distance_click<0.1 and distance_scroll_down<0.1 and distance_scroll<0.1):
-            #     pyautogui.alert(text='CHITAH HE KEH DE', title='SHERRRRRR', button='OK')  
+                pyautogui.scroll(-10) 
             if distance_click > 0.1: 
                 pyautogui.screenshot()
     if cv2.waitKey(1) & 0xFF == ord('q'):
